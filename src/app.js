@@ -32,6 +32,13 @@ function crearApp({ servicioReservas, formatoRegistro }) {
     });
   });
 
+  app.get("/estado", (req, res) => {
+    res.status(200).json({
+      estado: "OK",
+      mensaje: "El servidor está funcionando correctamente.",
+    });
+  });
+
   app.get("/api/reservas", controladorReservas.listarApi);
 
   app.use("/reservas", reservasRouter);

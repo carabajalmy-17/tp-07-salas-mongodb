@@ -15,6 +15,7 @@ function validarReserva(req, res, next) {
   const datosValidos =
     estudiante !== "" &&
     email !== "" &&
+    email.includes("@") &&
     salasPermitidas.includes(sala) &&
     fecha !== "" &&
     turnosPermitidos.includes(turno) &&
@@ -36,7 +37,7 @@ function validarReserva(req, res, next) {
     sala,
     fecha,
     turno,
-    cantidadPersonas,
+    personas: cantidadPersonas,
   };
 
   next();

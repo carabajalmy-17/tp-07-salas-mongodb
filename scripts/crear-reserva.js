@@ -7,12 +7,12 @@ async function main() {
     try {
         await conectarBaseDatos();
         const reserva = await Reserva.create({
-            "estudiante": "malena carabajal",
-            "email": "malena65@gmail.com",
-            "sala": "Sala Norte",
-            "fecha": "17-12-2026",
-            "turno": "Mañana",
-            "personas": 2
+                estudiante: "malena carabajal",
+                email: "malena65@gmail.com",
+                sala: "Sala Norte",
+                fecha: "17-12-2026",
+                turno: "Mañana",
+                personas: 2,
         });
         console.log("Reserva registrada. _id:", reserva._id.toString());
     } finally {
